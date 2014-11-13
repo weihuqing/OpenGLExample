@@ -1,8 +1,5 @@
 package com.niuniu.openglexample;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -24,9 +21,11 @@ public class OpenGLActivity extends Activity
             WindowManager.LayoutParams.FLAG_FULLSCREEN);
         
         GLSurfaceView glSurfaceView = new GLSurfaceView(this);
+        OpenGLRender render = new OpenGLRender();
         
-        glSurfaceView.setRenderer(this);
+        glSurfaceView.setRenderer(render);
         
+        setContentView(glSurfaceView);
     }
     
     
